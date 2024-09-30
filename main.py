@@ -40,8 +40,8 @@ koef = read_gfc()
 
 g = GravNN(10)
 
-fi = 45.0
-lb = 45.0
+fi = -90.0
+lb = 0.0
 
 fifi = np.arange(-90,90,0.25)
 lblb = np.arange(0,360,0.75)
@@ -49,7 +49,7 @@ i = np.where(fifi == fi)
 k = np.where(lblb == lb)
 
 from spher_harm import get_spherical_harm
-V  = get_spherical_harm(0,0,1.0,fi,lb,1.0,koef)
+V  = get_spherical_harm(0,2,1.0,fi,lb,1.0,koef)
 
 
 loss = (g(fi,al) - Pmn(sin(fi)))
